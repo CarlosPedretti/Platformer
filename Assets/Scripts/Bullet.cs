@@ -36,15 +36,15 @@ public class Bullet : MonoBehaviour
 
     public void DestroyBullet()
     {
-        Destroy(/*playerMovement.*/gameObject, 8f);
+        Destroy(gameObject);
     }
 
 
-    
-    private void OnTriggerEnter2D(Collider2D other)
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
 
-        DestroyBullet();
+        Destroy(gameObject);
     }
     
 }
