@@ -1227,6 +1227,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3316131037085132147, guid: 7acfff481fcf5594c851071802c11b6e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4231873803903495688, guid: 7acfff481fcf5594c851071802c11b6e, type: 3}
       propertyPath: m_Name
       value: New Ground 3
@@ -1276,7 +1280,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 376100442742073200, guid: 7acfff481fcf5594c851071802c11b6e, type: 3}
+    - {fileID: 6272134477947862582, guid: 7acfff481fcf5594c851071802c11b6e, type: 3}
+    - {fileID: 2396266410324505179, guid: 7acfff481fcf5594c851071802c11b6e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7acfff481fcf5594c851071802c11b6e, type: 3}
