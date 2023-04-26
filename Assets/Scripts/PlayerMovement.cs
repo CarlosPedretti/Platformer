@@ -83,9 +83,9 @@ public class PlayerMovement : MonoBehaviour
             jumping = false;
         }
 
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Win")
         {
-
+            GameManager.Instance.WinScreen();
         }
 
     }

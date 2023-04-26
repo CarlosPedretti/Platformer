@@ -8,6 +8,7 @@ using UnityEngine.Audio;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject GameOverScreen;
+    [SerializeField] private GameObject WinScene;
     [SerializeField] private TMP_Text LifeText;
 
 
@@ -38,6 +39,12 @@ public class GameManager : MonoBehaviour
     public void ShowGameOverScreen()
     {
         GameOverScreen.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void WinScreen()
+    {
+        WinScene.SetActive(true);
         Time.timeScale = 0f;
     }
 
