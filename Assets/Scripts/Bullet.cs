@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float Speed;
-    //public AudioClip Sound;
+    public int damage = 10;
 
     private Rigidbody2D Rigidbody2D;
     private Vector3 Direction;
@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     {
         Rigidbody2D = GetComponent<Rigidbody2D>();
          //playerMovement = GetComponent<PlayerMovement>();
-        //Camera.main.GetComponent<AudioSource>().PlayOneShot(Sound);
+
     }
 
     void Update()
@@ -46,5 +46,22 @@ public class Bullet : MonoBehaviour
 
         Destroy(gameObject);
     }
-    
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+
+
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
 }

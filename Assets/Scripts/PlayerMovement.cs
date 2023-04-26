@@ -1,9 +1,11 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public int maxHealth = 100;
+    public int currentHealth;
 
     public float horizontalMov;
     public float Velocity = 4f;
@@ -19,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+
+        currentHealth = maxHealth;
 
 
         jumping = false;
@@ -56,6 +60,20 @@ public class PlayerMovement : MonoBehaviour
             Shoot();
             LastShoot = Time.time;
         }
+
+        
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+           GameManager.Instance.ShowGameOverScreen();
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -64,7 +82,16 @@ public class PlayerMovement : MonoBehaviour
         {
             jumping = false;
         }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+
+        }
+
     }
+
+
+    
 
 
     private void FixedUpdate()
